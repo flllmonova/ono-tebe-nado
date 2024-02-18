@@ -1,1 +1,312 @@
-/* место для вашего кода */
+/*
+  блоки header и footer имеют схожую сетку шириной 1000px
+  блок address в header и блок с соц/сетями в footer стоят в 240px от правой стороны
+  колонки подобраны так, чтобы 2й элемент в сетке был по центру
+*/
+.section-grid {
+  display: grid;
+  grid-template-columns: 422px 156px 182px 240px;
+  justify-items: start;
+  align-items: center;
+}
+
+.section-grid_column-start {
+  grid-column: 1 / 2;
+}
+
+.section-grid_column-center {
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+
+.section-grid_column-end {
+  grid-column: 4 / 5;
+}
+
+.header {
+  padding: 92px 50px;
+}
+
+.header__links-list {
+  display: flex;
+  gap: 30px;
+  list-style-type: circle;
+}
+
+.header__links-list-item_no-bullit {
+  list-style-type: none;
+}
+
+.header__link {
+  padding: 0 1px 0;
+  border-bottom: 1px solid;
+  font-size: 18px;
+  line-height: 1.17;
+  letter-spacing: 0.18px;
+}
+
+.header__link_active {
+  border-bottom: none;
+  letter-spacing: 0;
+}
+
+.header__logo {
+  display: block;
+  width: 136px;
+}
+
+.address {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.address-link {
+  border-bottom: 1px solid;
+  letter-spacing: 0.18px;
+}
+
+.cover {
+  position: relative;
+  padding: 165px 50px 51px 50px;
+  background-image: url(../images/cover.jpg);
+  background-repeat: no-repeat;
+  background-position: -137px center;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-color: rgb(0 0 0 /0.6);
+}
+
+.cover__title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 128px;
+  color: #fff;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 115%;
+  letter-spacing: 30px;
+  text-transform: uppercase;
+}
+
+.aligned-text {
+  display: block;
+}
+
+.aligned-text_center {
+  margin-top: 12px;
+  margin-right: 29px;
+  text-align: center;
+}
+
+.aligned-text_right {
+  margin-top: 5px;
+  text-align: right;
+}
+
+.letter-spacing-extended {
+  letter-spacing: 60px;
+}
+
+.no-letter-spacing {
+  letter-spacing: 0;
+}
+
+.cover__description {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cover__description-text,
+.bet-button {
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.27;
+  text-transform: uppercase;
+}
+
+.cover__description-text {
+  margin-left: 28px;
+  word-spacing: 18px;
+}
+
+.bet-button {
+  width: 256px;
+  padding: 12px 31px 11px 32px;
+  border: 1px solid;
+  font-weight: 500;
+  line-height: 1.18;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.lots {
+  padding: 179px 24px 146px;
+}
+
+/* повторяющийся заголовок в секциях lots и about */
+.section__title {
+  font-weight: 700;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.lots__heading {
+  margin: 0 0 27px 40px;
+}
+
+.lots__card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.lots__card-list-item {
+  flex-grow: 1;
+  flex-basis: 334px;
+  min-height: 563px;
+}
+
+.card-link {
+  display: block;
+  height: 100%;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 51px 40px 48px;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.card_type_film {
+  background-image: url(../images/card-lot-01.jpg);
+  background-position: -106px center;
+}
+
+.card_type_book {
+  background-image: url(../images/card-lot-02.jpg);
+}
+
+.card_type_picture {
+  background-image: url(../images/card-lot-03.jpg);
+}
+
+.card__title {
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: underline solid 1px;
+  text-underline-offset: 3px;
+  text-transform: uppercase;
+}
+
+.card__text {
+  position: relative;
+  z-index: 1;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.card__text-extended {
+  letter-spacing: 2.6px;
+}
+
+.lots__look-more-link {
+  font-size: 20px;
+  line-height: 1.15;
+  margin-left: 40px;
+  border-bottom: 1px solid;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 334px 1fr;
+  justify-items: start;
+  align-items: start;
+  gap: 25px;
+  padding: 35px 24px 181px;
+}
+
+.about__logo {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.about__logo-image {
+  display: block;
+  width: 148px;
+  height: auto;
+  margin-top: 3px;
+}
+
+.about__title {
+  margin: 101px 0;
+}
+
+.about__text {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.about__text + .about__text {
+  margin-top: 24px;
+}
+
+.footer {
+  padding: 0 50px 88px;
+  align-items: start;
+}
+
+.footer__menu {
+  text-align: center;
+}
+
+.footer__menu-link {
+  font-size: 18px;
+  line-height: 1.17;
+  border-bottom: 1px solid;
+}
+
+.footer__menu-link_active {
+  border-bottom: none;
+}
+
+.footer__social_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+.footer__social-link {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
