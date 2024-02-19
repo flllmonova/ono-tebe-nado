@@ -1,30 +1,22 @@
+.header {
+  padding: 92px 50px;
+}
+
 /*
   блоки header и footer имеют схожую сетку шириной 1000px
   блок address в header и блок с соц/сетями в footer стоят в 240px от правой стороны
   колонки подобраны так, чтобы 2й элемент в сетке был по центру
 */
-.section-grid {
+
+.grid-3-columns {
   display: grid;
   grid-template-columns: 422px 156px 182px 240px;
   justify-items: start;
   align-items: center;
 }
 
-.section-grid_column-start {
+.grid-3-columns__column_start {
   grid-column: 1 / 2;
-}
-
-.section-grid_column-center {
-  grid-column: 2 / 3;
-  justify-self: center;
-}
-
-.section-grid_column-end {
-  grid-column: 4 / 5;
-}
-
-.header {
-  padding: 92px 50px;
 }
 
 .header__links-list {
@@ -48,6 +40,7 @@
 .header__link_active {
   border-bottom: none;
   letter-spacing: 0;
+  pointer-events: none 
 }
 
 .header__logo {
@@ -55,12 +48,21 @@
   width: 136px;
 }
 
+.grid-3-columns__column_center {
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+
 .address {
   font-size: 18px;
   line-height: 1.35;
 }
 
-.address-link {
+.grid-3-columns__column_end {
+  grid-column: 4 / 5;
+}
+
+.address__link {
   border-bottom: 1px solid;
   letter-spacing: 0.18px;
 }
@@ -76,10 +78,7 @@
 
 .overlay {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  inset: 0;
   z-index: 0;
   background-color: rgb(0 0 0 /0.6);
 }
@@ -100,6 +99,10 @@
   display: block;
 }
 
+.letter-spacing-extended {
+  letter-spacing: 60px;
+}
+
 .aligned-text_center {
   margin-top: 12px;
   margin-right: 29px;
@@ -109,10 +112,6 @@
 .aligned-text_right {
   margin-top: 5px;
   text-align: right;
-}
-
-.letter-spacing-extended {
-  letter-spacing: 60px;
 }
 
 .no-letter-spacing {
@@ -136,14 +135,14 @@
 }
 
 .cover__description-text {
-  margin-left: 28px;
-  word-spacing: 18px;
+  margin: 4px 0 0 28px;
+  word-spacing: 19px;
 }
 
 .bet-button {
   width: 256px;
-  padding: 12px 31px 11px 32px;
   border: 1px solid;
+  padding: 12px 31px 11px 32px;
   font-weight: 500;
   line-height: 1.18;
   text-align: center;
@@ -155,15 +154,11 @@
   padding: 179px 24px 146px;
 }
 
-/* повторяющийся заголовок в секциях lots и about */
-.section__title {
-  font-weight: 700;
-  font-size: 40px;
-  text-transform: uppercase;
-}
-
 .lots__heading {
   margin: 0 0 27px 40px;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .lots__card-list {
@@ -228,7 +223,7 @@
   line-height: 1.2;
 }
 
-.card__text-extended {
+.card__text_extended {
   letter-spacing: 2.6px;
 }
 
@@ -245,7 +240,7 @@
   justify-items: start;
   align-items: start;
   gap: 25px;
-  padding: 35px 24px 181px;
+  padding: 36px 24px 180px;
 }
 
 .about__logo {
@@ -268,15 +263,17 @@
 
 .about__title {
   margin: 101px 0;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   font-size: 20px;
   line-height: 1.2;
-}
-
-.about__text + .about__text {
-  margin-top: 24px;
 }
 
 .footer {
@@ -289,12 +286,13 @@
 }
 
 .footer__menu-link {
+  border-bottom: 1px solid;
   font-size: 18px;
   line-height: 1.17;
-  border-bottom: 1px solid;
 }
 
 .footer__menu-link_active {
+  pointer-events: none;
   border-bottom: none;
 }
 
